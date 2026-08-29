@@ -1,2 +1,2 @@
-# -PixelPeak-Expo
+# PixelPeak Expo
 COS 214 Prac 3
