@@ -21,6 +21,10 @@
 #include "ObservingLeaves.h"
 #include <iostream>
 
+/**
+ * @brief EventFlow submission entry point.
+ * @return 0 on successful completion.
+ */
 int main() {
     const int EVACUATION_THRESHOLD = 5000; //matches SD3's alt guard exactly
 
@@ -54,14 +58,14 @@ int main() {
 
     //Observer registration: separate relationship from ownership --
     EventControl control;
-    control.attach(arenaZone);            //zone hears notices from control
-    arenaZone->attach(mainArena);         //leaves hear notices relayed by their zone
+    control.attach(arenaZone);//zone hears notices from control
+    arenaZone->attach(mainArena); //leaves hear notices relayed by their zone
     arenaZone->attach(westGate);
     arenaZone->attach(figurines);
     arenaZone->attach(apparel);
 
     std::cout << "--- initial state ---\n";
-    expo->reportStatus();                              //Composite traversal/query
+    expo->reportStatus(); //Composite traversal/query
     std::cout << "\n";
 
     //Rule: schedule notices only affect TournamentStage-
@@ -99,7 +103,7 @@ int main() {
     }
     std::cout << "\n";
 
-    // Runtime reorganisation: move apparel stall to the LAN zone
+    //Runtime reorganisation: move apparel stall to the LAN zone
     std::cout << "--- runtime reorganisation: Apparel Stall moves Arena -> LAN Zone ---\n";
     transferUnit(merchCourt, lanZone, apparel, arenaZone, /*newSubject=*/nullptr, apparel);
     //Composite ownership AND Observer registration both move together;
@@ -108,7 +112,7 @@ int main() {
     expo->reportStatus();
     std::cout << "\n";
 
-    // Clean shutdown
+    //Clean shutdown
     std::cout << "--- clean shutdown ---\n";
     control.detach(arenaZone); //detach before the owning tree is released
     delete expo; //cascades: frees every remaining owned child exactly once
