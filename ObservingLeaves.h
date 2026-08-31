@@ -26,6 +26,11 @@
 /** @brief An EntryGate that reacts to capacity and safety notices. */
 class ObservingEntryGate : public EntryGate, public Observer {
 public:
+    /**
+     * @brief Construct an observing entry gate.
+     * @param n Name of the gate.
+     * @param f Admissions per minute.
+     */
     ObservingEntryGate(const std::string& n, int f) : EntryGate(n, f) {}
     ~ObservingEntryGate() override {}
 
@@ -44,6 +49,11 @@ public:
 /** @brief A ShuttleStop that reacts to weather and evacuation notices. */
 class ObservingShuttleStop : public ShuttleStop, public Observer {
 public:
+    /**
+     * @brief Construct an observing shuttle stop.
+     * @param n Name of the shuttle stop.
+     * @param b Number of buses available.
+     */
     ObservingShuttleStop(const std::string& n, int b) : ShuttleStop(n, b) {}
     ~ObservingShuttleStop() override {}
 
@@ -61,6 +71,11 @@ public:
 /** @brief A MerchVendor that reacts to weather and evacuation notices. */
 class ObservingMerchVendor : public MerchVendor, public Observer {
 public:
+    /**
+     * @brief Construct an observing merchandise vendor.
+     * @param n Name of the vendor stall.
+     * @param st Stock level.
+     */
     ObservingMerchVendor(const std::string& n, int st) : MerchVendor(n, st) {}
     ~ObservingMerchVendor() override {}
 
@@ -78,6 +93,11 @@ public:
 /** @brief A TournamentStage that reacts to schedule and pause/resume notices. */
 class ObservingTournamentStage : public TournamentStage, public Observer {
 public:
+    /**
+     * @brief Construct an observing tournament stage.
+     * @param n Name of the stage.
+     * @param s Number of seats.
+     */
     ObservingTournamentStage(const std::string& n, int s) : TournamentStage(n, s) {}
     ~ObservingTournamentStage() override {}
 

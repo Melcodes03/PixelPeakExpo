@@ -19,6 +19,11 @@ enum class NoticeType {
 struct Notice {
     NoticeType  type;    ///< What kind of change occurred.
     std::string detail;  ///< Human-readable detail (e.g. "storm approaching").
+    /**
+     * @brief Construct a notice.
+     * @param t The kind of change that occurred.
+     * @param d Human-readable detail (optional).
+     */
     Notice(NoticeType t, const std::string& d = "") : type(t), detail(d) {}
 };
 #endif
