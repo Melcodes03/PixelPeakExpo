@@ -29,6 +29,10 @@ public:
     virtual void open() = 0;               ///< Bring this part into operation.
     virtual void close() = 0;              ///< Take this part out of operation.
     virtual void reportStatus() const = 0; ///< Print current status.
+        /**
+     * @brief Return this component's contribution to overall capacity.
+     * @return The capacity value (meaning varies by leaf type — seats, flow rate, stock, staff, etc.).
+     */
     virtual int  getCapacity() const = 0;  ///< Return capacity contribution.
 
     /**
