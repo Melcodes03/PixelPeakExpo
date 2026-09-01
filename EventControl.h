@@ -25,7 +25,7 @@
  *    state in advance (e.g. during teardown).
  *  - notify() iterates over a SNAPSHOT (copy) of the registration list rather
  *    than the live list. This makes it safe for an observer's update(...) to
- *    attach or detach observers -- including itself -- while notification for
+ *    attach or detach observers including itself while notification for
  *    the current notice is still in progress. Any change made mid-notify is
  *    only reflected starting from the NEXT call to notify().
  *
