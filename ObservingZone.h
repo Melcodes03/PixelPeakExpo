@@ -34,13 +34,13 @@
  * GoF roles: Composite (via EventGroup), Observer, Subject (concrete).
  */
 class ObservingZone : public EventGroup, public Observer, public Subject {
-    std::vector<Observer*> downstream; ///< Non-owning: this zone's own registrants.
+    std::vector<Observer*> downstream; // Non-owning: this zone's own registrants.
 public:
     /** @param n Name of this zone. */
     ObservingZone(const std::string& n) : EventGroup(n) {}
     ~ObservingZone() override {}
 
-    // --- Subject side: who this zone notifies downstream --------------------
+    // --- Subject side: who this zone notifies downstream ----------
     void attach(Observer* o) override {
         if (!o) return;
         if (std::find(downstream.begin(), downstream.end(), o) != downstream.end()) return;
@@ -60,7 +60,7 @@ public:
      * @brief Relay an upstream notice to this zone's own registered observers.
      *
      * This is the cascade step: the zone does not need to know what concrete
-     * leaves sit below it -- it just re-broadcasts through its own Subject
+     * leaves sit below it it just re-broadcasts through its own Subject
      * role. A zone could also react itself before relaying (log, change its
      * own internal state, filter the notice); this base version relays
      * unconditionally and prints a trace line for demo/debug purposes.
