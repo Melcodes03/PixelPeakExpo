@@ -32,7 +32,7 @@
  * GoF role: Subject (concrete). Also fills the spec's named "EventControl" role.
  */
 class EventControl : public Subject {
-    std::vector<Observer*> observers; ///< Non-owning: registered observers.
+    std::vector<Observer*> observers; // Non-owning: registered observers.
 public:
     EventControl() {}
     ~EventControl() override {}
