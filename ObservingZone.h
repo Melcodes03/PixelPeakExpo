@@ -38,6 +38,7 @@ class ObservingZone : public EventGroup, public Observer, public Subject {
 public:
     /** @param n Name of this zone. */
     ObservingZone(const std::string& n) : EventGroup(n) {}
+    /** @brief Destroy the object. */
     ~ObservingZone() override {}
 
     // --- Subject side: who this zone notifies downstream ----------

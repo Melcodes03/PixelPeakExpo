@@ -34,7 +34,9 @@
 class EventControl : public Subject {
     std::vector<Observer*> observers; // Non-owning: registered observers.
 public:
+    /** @brief Construct an EventControl with no observers registered yet. */
     EventControl() {}
+    /** @brief Destroy the object. */
     ~EventControl() override {}
 
     /**

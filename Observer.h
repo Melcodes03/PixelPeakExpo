@@ -13,6 +13,7 @@
  */
 class Observer {
 public:
+    /** @brief Destroy the object. */
     virtual ~Observer() {}
     /**
      * @brief Receive a pushed notice from a subject the observer is attached to.

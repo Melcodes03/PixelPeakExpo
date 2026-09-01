@@ -32,6 +32,7 @@ public:
      * @param f Admissions per minute.
      */
     ObservingEntryGate(const std::string& n, int f) : EntryGate(n, f) {}
+    /** @brief Destroy the object. */
     ~ObservingEntryGate() override {}
 
     /** @param n The pushed notice. Reacts to CAPACITY_ALERT and EVACUATE. */
@@ -55,6 +56,7 @@ public:
      * @param b Number of buses available.
      */
     ObservingShuttleStop(const std::string& n, int b) : ShuttleStop(n, b) {}
+    /** @brief Destroy the object. */
     ~ObservingShuttleStop() override {}
 
     /** @param n The pushed notice. Reacts to WEATHER_ALERT and EVACUATE. */
@@ -77,6 +79,7 @@ public:
      * @param st Stock level.
      */
     ObservingMerchVendor(const std::string& n, int st) : MerchVendor(n, st) {}
+    /** @brief Destroy the object. */
     ~ObservingMerchVendor() override {}
 
     /** @param n The pushed notice. Reacts to WEATHER_ALERT and EVACUATE. */
@@ -99,6 +102,7 @@ public:
      * @param s Number of seats.
      */
     ObservingTournamentStage(const std::string& n, int s) : TournamentStage(n, s) {}
+    /** @brief Destroy the object. */
     ~ObservingTournamentStage() override {}
 
     /** @param n The pushed notice. Reacts to PAUSE, RESUME and SCHEDULE_CHANGE. */

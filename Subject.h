@@ -14,12 +14,13 @@
  */
 class Subject {
 public:
+    /** @brief Destroy the object. */
     virtual ~Subject() {}
     /** @brief Register a non-owning observer. @param o Must not be nullptr. */
     virtual void attach(Observer* o) = 0;
-    /** @brief Remove a previously registered observer. Safe if not present. */
+    /** @brief Remove a previously registered observer. Safe if not present.  @param o Observer to remove.*/
     virtual void detach(Observer* o) = 0;
-    /** @brief Push the current notice to all registered observers. */
+    /** @brief Push the current notice to all registered observers. @param n The notice to broadcast.*/
     virtual void notify(const Notice& n) = 0;
 };
 #endif
