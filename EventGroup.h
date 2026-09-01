@@ -61,6 +61,12 @@ public:
         std::cout << "[Group " << name << "] capacity " << getCapacity() << ":\n";
         for (EventComponent* c : children) c->reportStatus();
     }
+    
+        /**
+     * @brief Sum the capacity of all children (recursive).
+     * @return Total capacity of this group's whole subtree.
+     */
+
     int getCapacity() const override {
         int total = 0;
         for (EventComponent* c : children) total += c->getCapacity();

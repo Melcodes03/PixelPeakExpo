@@ -36,6 +36,12 @@ public:
     void reportStatus() const override {
         std::cout << "  Gate " << name << ": " << (admitting ? "OPEN" : "CLOSED") << ", flow " << flowPerMin << "/min\n";
     }
+
+        /**
+     * @brief Return this unit's capacity contribution.
+     * @return The capacity value for this leaf.
+     */
+    
     int getCapacity() const override { return flowPerMin; }
 };
 
